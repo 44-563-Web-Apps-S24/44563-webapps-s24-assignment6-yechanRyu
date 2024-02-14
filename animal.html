@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Animal of YechanRyu</title>
+ </head>
+<body>
+<h1>Animal game by YechanRyu</h1>
+<h2>Getting input</h2>
+<form>
+    <label for="hidden_animal">The hidden animal type: </label>
+    <input id="hidden_animal" type="password" value="Chicken">
+    <label for="guess">Guess the animal: </label>
+    <input id="guess" type="text">
+    <button type="button" onclick="checkAnimal()">Check the guess</button>
+</form>
+<p id="results">This would be changed</p>
+    <script>
+        var worng =0;
+        var correct =0;
+        function checkAnimal(){
+            var hiddenAnimal =document.getElementById("hidden_animal").value;
+            var guessAnimal =document.getElementById("guess").value;
+            var result_element=document.getElementById("results");
+            if(hiddenAnimal == guessAnimal){
+                correct++;
+                alert("Ruff ruff");
+                result_element.innerHTML="Correct: "+correct+" Wrong: "+worng;
+            }
+            else{
+                worng ++;
+                alert("Grrrr");
+                result_element.innerHTML="Correct: "+correct+" Wrong: "+worng;
+            } 
+            
+        }
+    </script>
+</body>
+</html> 
