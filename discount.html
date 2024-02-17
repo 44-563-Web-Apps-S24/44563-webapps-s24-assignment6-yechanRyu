@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>calculation</title>
 </head>
  
 <body>
@@ -17,9 +17,9 @@
 <div id="result"></div>
 <script>
     function discount(){
-        var perprice = document.getElementById("price").value;
-        var item_count = document.getElementById("count").value;
-        var reductions = parseFloat(document.getElementById("reductions").value);
+        let perprice = document.getElementById("price").value;
+        let item_count = document.getElementById("count").value;
+        let reductions = parseFloat(document.getElementById("reductions").value);
         let myOutput="";
         for(let i =reductions;i<reductions+5;i++){
             var totalValue = (perprice * item_count * (1 - (i / 100))).toFixed(1);
@@ -28,5 +28,35 @@
         document.getElementById("result").innerHTML = myOutput;
     }
 </script>
+<form>
+    <input type="radio" id="sum" name="operations" onclick="chooseOp()" checked>
+    <label for="sum">sum</label>
+    <input type="radio" id="mult" onclick="chooseOp()" name="operations">
+    <label for="mult">multiply</label>
+    <input type="radio" id="exp" onclick="chooseOp()" name="operations">
+    <label for="exp">exponent</label>
+</form>
+<div id="results"></div>
+<script>
+    function chooseOp(){
+        price = parseFloat(document.getElementById("price").value)
+        discountt = parseFloat(document.getElementById("reductions").value);
+        resultss =document.getElementById("results");
+        var operation=0;
+        if (document.getElementById("sum").checked) {
+            operation = price + discountt
+            resultss.innerHTML = "Sum of "+ price + " and " + discountt+ " is "+operation
+        } 
+        else if (document.getElementById("mult").checked) {
+            operation = price * discountt
+            resultss.innerHTML = "multiply of "+ price + " and " + discountt+ " is "+operation
+        } 
+        else if (document.getElementById("exp").checked) {
+            operation = Math.pow(price, discountt)
+            resultss.innerHTML = "exponent of "+ price + " and " + discountt+ " is "+operation
+        }
+}
+</script>
+
 </body>
 </html> 
