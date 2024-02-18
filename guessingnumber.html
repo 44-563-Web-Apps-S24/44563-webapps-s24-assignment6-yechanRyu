@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><title>Guess YechanRyu</title></head>
+<body>
+<h1>Yechan Ryu Gussing number</h1>
+
+<form>
+    <label for="corrct">The Correct number: </label>
+    <input id="corrct" type="password" value="7">
+    <label for="guess">Guess the number: </label>
+    <input id="guess" type="number">
+    <button type="button" onclick="checknumber()">Number Guessing</button>
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+function checknumber(){
+    var worng =0;
+    var correct =0;
+    var correct =document.getElementById("corrct").value;
+    var guess =document.getElementById("guess").value;
+    var result_element=document.getElementById("results");
+    if(correct == correct){
+        correct++;
+        alert("Correct");
+        result_element.innerHTML="Correct: "+correct+" Wrong: "+worng;
+        if(worng>correct){
+            alert("Sorry, too many wrong guesses.");
+        }
+    }
+    else{
+        worng ++;
+        alert("Wrong");
+        result_element.innerHTML="Correct: "+correct+" Wrong: "+worng;
+        }
+    } 
+
+</script>
+
+</body>
+</html> 
