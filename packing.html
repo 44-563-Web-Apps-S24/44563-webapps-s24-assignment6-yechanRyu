@@ -12,6 +12,13 @@
     <input type="checkbox" id="checkbox2" value="Fasle">
     <button type="button" onclick="selectPack()">Select for packing</button>
 </form>
+<form>
+    <label for="month">Enter travel month: </label>
+    <input id="month" type="text" value="May">
+    <label for="price">Enter price: </label>
+    <input id="price" type="text">
+    <button type="button" onclick="updatePack()">Update the pack</button>
+</form>
 <div id="result"></div>
 <script>
     var my_pack ={};
@@ -21,6 +28,13 @@ function selectPack(){
     my_pack.light = document.getElementById("checkbox").checked;
     my_pack.carry = document.getElementById("checkbox1").checked;
     my_pack.tablet = document.getElementById("checkbox2").checked;
+    document.getElementById("result").innerHTML = JSON.stringify(my_pack);
+}
+function updatePack(){
+    month = document.getElementById("month").value;
+    price = document.getElementById("price").value;
+    my_pack["month"] = month;
+    my_pack["price"] = `$ ${price}`;
     document.getElementById("result").innerHTML = JSON.stringify(my_pack);
 }
 </script>
